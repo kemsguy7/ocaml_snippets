@@ -1,0 +1,30 @@
+If expressions
+ - both values  to be compared must be of the same type 
+
+Syntax 
+- If true then  “output” else 1;; 
+
+
+Evaluation rules 
+- If e1 evaluates to true, and if e2 evaluates to v, the if el then e2 else e2 evaluates to v 
+- If e1 evaluates to false, and if e3 evalutes to v,  then if el then e2 else e2 evaluates to v 
+
+Type checking  : 
+   If el has type bool and e2 has type t and e3 has type t then if el then e2 else e3 has type t 
+
+
+Write ==> to indicate evaluation  , pronounce as “evaluates to” 
+
+Rewriting with code 
+Syntax : 
+     If el then e2 else e3 
+
+Evaluation: 
+ - If el ==> true and e2 ==> v, then if el then e2 else e3 ===> v
+- If el ==> false and e3 ==>v , then if el then e2 else e3 ==> v 
+
+Type checking 
+If el : bool and e2 : t and e3 : t  then if el then e2 else e3 : t 
+
+
+
