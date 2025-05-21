@@ -12,3 +12,13 @@ x + String.length y;;
 (* Function for compmuting the distance between 2 points rr *)
 let distance (x1,y1) (x2, y2) = 
   Float.sqrt ((x1 -. x2) ** 2. +. (y1 -. y2) ** 2.);; 
+
+
+
+ (*LISTS *)
+ let languages = ["ocaml"; "python"; "java"];;
+ 
+ (* list constructors can be used for adding elements to the front of a list *)
+ "French" :: "Spanish" :: languages;; 
+
+ 
