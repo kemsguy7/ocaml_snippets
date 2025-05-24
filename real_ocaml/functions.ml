@@ -25,7 +25,16 @@ abs_diff 3 4;;
 let abs_diff = (fun x -> (fun y -> abs (x - y)));;
 
 (* Using the curried function : partial application *)
+
+
+(*currying is a technique that allows us to transform a function that takes multiple arguments into a sequence of functions that each take a single argument. This is useful for creating more flexible and reusable functions.*)
+
 let dist_from_3 = abs_diff 3;; 
 dist_from_3 4;; 
 
-(* Using the curried function : partial application *) 
+
+(* Using Different parts of a tuple as different arguments*)
+let abs_diff (x, y) = abs (x - y);; 
+abs_diff (3, 4);; 
+
+
