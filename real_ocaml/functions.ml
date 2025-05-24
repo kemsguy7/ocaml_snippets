@@ -17,4 +17,15 @@ let transforms = [ String.uppercase; String.lowercase ];;
  let plusone x = x + 1;; 
 
 
- 
+ (* Multiargumant Functions *)
+let abs_diff x y = abs (x - y);; 
+abs_diff 3 4;; 
+
+(* rewriting function above in an equivalent form: curried *)
+let abs_diff = (fun x -> (fun y -> abs (x - y)));;
+
+(* Using the curried function : partial application *)
+let dist_from_3 = abs_diff 3;; 
+dist_from_3 4;; 
+
+(* Using the curried function : partial application *) 
