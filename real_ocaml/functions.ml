@@ -51,3 +51,23 @@ let some_or_zero num_opt =
   match num_opt with 
   | Some x -> x 
   | None -> 0;; 
+
+
+(* Declaring a two-argument (curried) function with a pattern match on the second argument *)
+
+let some_or_default default = function 
+  | Some x -> x 
+  | None  -> default;; 
+  
+some_or_default 3 (Some 5);; 
+
+List.map ~f:(some_or_default 100) [Some 3; None; Some 4];; 
+
+
+(* Labelled Arguments*)
+let ratio ~num ~denom = Float.of_int num /. Float.of_int denom;;   
+ratio ~num:3 ~denom:10;; 
+
+
+
+
