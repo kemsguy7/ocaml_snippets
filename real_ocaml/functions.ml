@@ -38,3 +38,16 @@ let abs_diff (x, y) = abs (x - y);;
 abs_diff (3, 4);; 
 
 
+
+(* Declaring Functions with functions *)
+let  some_or_zero = function 
+  | Some x -> x 
+  | None -> 0;; 
+List.map ~f:some_or_zero [Some 3; None; Some 4];; 
+
+(* The block of code above is equivalent to combining an ordinary function definition with a match *)
+
+let some_or_zero num_opt = 
+  match num_opt with 
+  | Some x -> x 
+  | None -> 0;; 
