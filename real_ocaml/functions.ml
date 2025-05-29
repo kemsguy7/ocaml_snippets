@@ -69,5 +69,11 @@ let ratio ~num ~denom = Float.of_int num /. Float.of_int denom;;
 ratio ~num:3 ~denom:10;; 
 
 
+(* Labelled arguments allow us to specify the names of the arguments when calling the function, making it clearer what each argument represents. *)
+
+(* Label Punning  *)
+let num = 3 in 
+let denom = 4 in 
+ratio ~num ~denom;;
 
 
