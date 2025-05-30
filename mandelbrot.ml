@@ -17,3 +17,19 @@ let mandelbrot a b =
       mandel_rec x' y' (i + 1)
   in 
   mandel_rec 0. 0. 0 
+
+let draw () = 
+  for w = 0 to width - 1 do 
+    for h = 0 to height - 1 do 
+      let a = 4. *. float w /. float width -. 2. in 
+      let b = 4. *. float h /. float height -. 2. in 
+      if mandelbrot a b then plot w h 
+    done 
+  done 
+
+let () = 
+  let dim = Printf.sprintf "%dx%d" width height in 
+  open_graph dim; 
+  draw (); 
+  draw(); 
+  ignore (read_key ()) 
