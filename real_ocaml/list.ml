@@ -39,6 +39,23 @@ let rec drop_value l to_drop =
   -> hd :: drop_value tl to_drop : We keep hd recursively process the rest of the list then combine them . 
    *)
 
-   
+
+#require "core_bench";; 
+(* List.fold *)
+List.fold ~init:0 ~f:(+) [1;2;3;];; 
+
+(* using fold to reverese a list in which case the accumulator is itself a list *)
+List.fold ~init:[] ~f:(fun acc hd -> hd :: acc) [1;2;3;4];;
+
+(* Using the 3 list functions to conpute maximum colum widths*)
+let max_widths header rows = 
+  let lengths l = List.map ~f:String.length l in 
+  List.fold rows 
+    ~init: (lengths header) 
+    ~f:(fun acc row ->  
+      List.map2_exn ~f:Int.max acc (lengths row));; 
+
+
+
 
 
