@@ -88,4 +88,22 @@ let render_table header rows =
     );; 
 
 
+(*filter*)
+  List.filter ~f:(fun x -> x % 2 = 0) [1;2;3;4;5];; 
 
+(* Filter with map *)
+
+let extensions filenames = 
+  List.filter_map filenames ~f:(fun fname -> 
+    match String.rsplit2 ~on:'.' fname with 
+    | None | Some ("",_) -> None 
+    | Some (_, ext) -> 
+      Some ext )
+    |> List.dedup_and_sort ~compare:String.compare;; 
+
+  (*example call*)
+  extensions ["foo.c"; "foo.ml"; "ba.ml"; "bar.mli"];; 
+
+
+    
+  
