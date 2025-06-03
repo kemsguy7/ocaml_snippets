@@ -66,7 +66,26 @@ let render_separator widths =
 
   render_separator [3;6;2];; (* calling the function *)
 
+  (* Function for padding out a string to a specified Length *)
+  let pad s length = 
+    s ^ String.make (length - String.length s) ' ';;
+  pad "hello" 10;; (* calling the function *) 
+  
+(* Function to render a single row of the table *) 
+let render_row row widths = 
+  let padded = List.map2_exn row width ~f:pad in
+  "| " ^ String.concat ~sep: " | " padded ^ " | ";; 
 
+render_row ["Hello"; "World"] [10;15];; (* calling the function *)
+
+(* Function to render the entire table *)
+let render_table header rows =  
+  let widths = max_widths header rows in 
+  String.concat ~sep:"\n" 
+    (render_row header widths  
+      :: render_separator widths 
+      :: List.map rows ~f:(fun row -> render_row row widths)
+    );; 
 
 
 
