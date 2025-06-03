@@ -37,7 +37,7 @@ let is_zero (x: int) : string =
   print_string (is_zero 0);;
 
 
-let y : int list = [1;2;3];;
+  let y : int list = [1;2;3];;
 (* 
 let is_list_empty (1: int list) : int = 
   begin match 1 with 

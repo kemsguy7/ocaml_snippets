@@ -56,6 +56,17 @@ let max_widths header rows =
       List.map2_exn ~f:Int.max acc (lengths row));; 
 
 
+(*Writing the code to generate the line that seperates the header from the rest of the text table *)
+
+let render_separator widths = 
+  let pieces = List.map widths  
+    ~f:(fun w -> String.make w '-') 
+  in 
+  "|-" ^ String.concat ~sep:"-+-" pieces ^ "-|";; 
+
+  render_separator [3;6;2];; (* calling the function *)
+
+
 
 
 
