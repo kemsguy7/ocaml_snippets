@@ -32,5 +32,26 @@ let rec count n =
 
  (* same funciton above but making it tail recursive*) 
 let rec count_aux n acc = 
-  if n =0 then acc else count_aux (n -1) (acc + 1) 
+  if n = 0 then acc else count_aux (n -1) (acc + 1) 
 
+
+(** [fact n] is [n] factorial. *)
+let rec fact n = 
+  if n = 0 then 1 else n * fact (n - 1) 
+
+
+(*another example of tail recursive function *)
+
+(* This is a tail recursive version of the factorial function. 
+   It uses an accumulator to store the result as it recurses, 
+   which allows it to avoid growing the call stack. *)
+
+   (*original*)
+
+let rec fact n = 
+  if n = 0 then 1 else n * fact (n - 1);;
+
+ let rec fact_aux n acc = 
+         if n = 0 then acc else fact_aux (n - 1) (n * acc) 
+     
+       let fact_tr n = fact_aux n 1;;
