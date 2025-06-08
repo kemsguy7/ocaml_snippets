@@ -26,3 +26,11 @@ let add = fun x -> (fun y -> x + y);;
 (*Defining an infix operator*)
 let ( ^^ ) x y = max x y;; 
 2 (^^) 3;; (* This uses the infix operator we just defined to find the maximum of 2 and 3 which will result in number 3 *)
+
+let rec count n = 
+  if n = 0 then 0 else 1 + count (n - 1) 
+
+ (* same funciton above but making it tail recursive*) 
+let rec count_aux n acc = 
+  if n =0 then acc else count_aux (n -1) (acc + 1) 
+
