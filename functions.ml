@@ -21,3 +21,8 @@ let f ?name:(arg1=8) arg2 = arg1 + arg2;;
 let add x y = x + y;; 
 let add x = fun y -> x + y;; 
 let add = fun x -> (fun y -> x + y);; 
+
+
+(*Defining an infix operator*)
+let ( ^^ ) x y = max x y;; 
+2 (^^) 3;; (* This uses the infix operator we just defined to find the maximum of 2 and 3 which will result in number 3 *)
