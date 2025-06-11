@@ -29,3 +29,19 @@ let empty lst =
   (*writing same function without pattern matching *)
   let empty list  = 
     lst = []
+
+
+  (* function to determine if a list is empty using List module *)
+let length_is lst n = 
+  match List.length with 
+  | n -> true 
+  | _ -> false 
+
+(*code above throws an error , rewriting it*)
+let length is lst n = 
+  match List.length lst with 
+  | m -> m = n 
+
+  (*or better *)
+let length_is lst n = 
+  List.length lst = n 
