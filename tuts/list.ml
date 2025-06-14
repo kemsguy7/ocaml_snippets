@@ -12,12 +12,12 @@ let rec sum xs =
 
   (*both codes above are same can be written in a one-liner too and the first  | after the match keyword is optional *)
 
-  (*For functions that immediately pattern matches againt it's final argument, there's a syntatic sugar for such e.g  *)
+  (*For functions that immediately pattern matches againt it's final argument, there's a syntatic sugar for such e.g by removing the match with *)
   let rec sum = function  
     | [] -> 0 
     | h :: t -> h + sum t
 
-  let rec append lst1 lst2 = 
+  let rec append lst1 lst2 =  (*can't use a sysntatic sugar here , because it does not match it's last argument immediately*)
     match lst1 with 
     | [] -> lst2  
      | h::t -> h:: append t lst2;;
@@ -61,4 +61,12 @@ let length_is lst n =
  *)
 
  
+ type day = Sun | Mon | Tue | Wed;;
 
+(* For accessing values of a variant , we can use pattern matching *)
+let int_of_day d = 
+  match d with 
+  | Sun -> 1 
+  | Mon -> 2  
+  | Tue ->  3 
+  | Wed -> 4 
