@@ -1,0 +1,14 @@
+2025-06-14T15:09:49+00:00 Kemsguy7.local#01 I: Start test test suit for sum:0:empty.
+2025-06-14T15:09:49+00:00 Kemsguy7.local#01 E: Test test suit for sum:0:empty has failed.
+2025-06-14T15:09:49+00:00 Kemsguy7.local#01 E: not equal in test test suit for sum:0:empty.
+2025-06-14T15:09:49+00:00 Kemsguy7.local#01 E: Raised at OUnitAssert.assert_failure in file "src/lib/ounit2/advanced/oUnitAssert.ml", line 45, characters 2-27
+2025-06-14T15:09:49+00:00 Kemsguy7.local#01 E: Called from OUnitRunner.run_one_test.(fun) in file "src/lib/ounit2/advanced/oUnitRunner.ml", line 83, characters 13-26
+2025-06-14T15:09:49+00:00 Kemsguy7.local#01 E: 
+2025-06-14T15:09:49+00:00 Kemsguy7.local#01 I: End test test suit for sum:0:empty.
+2025-06-14T15:09:49+00:00 Kemsguy7.local#01 I: Start test test suit for sum:2:two_elements.
+2025-06-14T15:09:49+00:00 Kemsguy7.local#01 E: Test test suit for sum:2:two_elements has failed.
+2025-06-14T15:09:49+00:00 Kemsguy7.local#01 E: not equal in test test suit for sum:2:two_elements.
+2025-06-14T15:09:49+00:00 Kemsguy7.local#01 E: Raised at OUnitAssert.assert_failure in file "src/lib/ounit2/advanced/oUnitAssert.ml", line 45, characters 2-27
+2025-06-14T15:09:49+00:00 Kemsguy7.local#01 E: Called from OUnitRunner.run_one_test.(fun) in file "src/lib/ounit2/advanced/oUnitRunner.ml", line 83, characters 13-26
+2025-06-14T15:09:49+00:00 Kemsguy7.local#01 E: 
+2025-06-14T15:09:49+00:00 Kemsguy7.local#01 I: End test test suit for sum:2:two_elements.

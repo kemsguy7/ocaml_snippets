@@ -1,0 +1,7 @@
+2025-06-14T15:09:49+00:00 Kemsguy7.local#02 I: Start test test suit for sum:1:singleton.
+2025-06-14T15:09:49+00:00 Kemsguy7.local#02 E: Test test suit for sum:1:singleton has failed.
+2025-06-14T15:09:49+00:00 Kemsguy7.local#02 E: not equal in test test suit for sum:1:singleton.
+2025-06-14T15:09:49+00:00 Kemsguy7.local#02 E: Raised at OUnitAssert.assert_failure in file "src/lib/ounit2/advanced/oUnitAssert.ml", line 45, characters 2-27
+2025-06-14T15:09:49+00:00 Kemsguy7.local#02 E: Called from OUnitRunner.run_one_test.(fun) in file "src/lib/ounit2/advanced/oUnitRunner.ml", line 83, characters 13-26
+2025-06-14T15:09:49+00:00 Kemsguy7.local#02 E: 
+2025-06-14T15:09:49+00:00 Kemsguy7.local#02 I: End test test suit for sum:1:singleton.
