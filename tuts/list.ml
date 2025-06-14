@@ -45,3 +45,15 @@ let length is lst n =
   (*or better *)
 let length_is lst n = 
   List.length lst = n 
+
+
+  (*DEEP PATTERN MATCHING*)
+  (*Patterns can be nested. Doing so can allow you code to look deeply into the structure of a list, for example  _ :: []   =>  matches all lists with exactly one element  
+  _ :: _   => matches all lists with at least one element .   
+ _::_:: [] => matches all lists with exactly 2 elements
+ _::_::_::_ => matches all lists with at least 3 elements  
+
+
+ *)
+
+ 
