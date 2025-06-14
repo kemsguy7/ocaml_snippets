@@ -5,12 +5,17 @@ let rec sum xs =
 
 
 
-let rec sum xs = 
+let rec sum xs =  
    match xs with 
    | [] -> 0  
    | x ::xs' -> x + sum xs' 
 
   (*both codes above are same can be written in a one-liner too and the first  | after the match keyword is optional *)
+
+  (*For functions that immediately pattern matches againt it's final argument, there's a syntatic sugar for such e.g  *)
+  let rec sum = function  
+    | [] -> 0 
+    | h :: t -> h + sum t
 
   let rec append lst1 lst2 = 
     match lst1 with 
@@ -53,7 +58,7 @@ let length_is lst n =
  _::_:: [] => matches all lists with exactly 2 elements
  _::_::_::_ => matches all lists with at least 3 elements  
 
-
  *)
 
  
+
