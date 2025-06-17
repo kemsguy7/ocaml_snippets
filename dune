@@ -1,2 +1,2 @@
-(executable)
- (name nexttest)
+(executable
+ (name pokemon))
