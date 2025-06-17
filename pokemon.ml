@@ -40,3 +40,15 @@ let () =
   Printf.printf "Effectiveness of Fire vs Fire: %d\n" eff_int;
 
 
+(* Adding a record type for pokemon *)
+type mon = {
+  name : string; 
+  hp : int; 
+  ptype : ptype; 
+}
+
+let charmander = {
+  name = "Charmander";
+  hp = 39;
+  ptype = TFire;
+}
