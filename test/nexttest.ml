@@ -8,8 +8,6 @@ let tests = "test suite for next_weekday" >::: [
     "fri_after_thu" >:: (fun _ -> assert_equal Friday (next_weekday Thursday));
  ]  *)
 
-
-
  (* Abstracting a function that creates test cases for next_weekday to avoid repetion*)
  
 let make_next_weekday_test name expected_output input = 
