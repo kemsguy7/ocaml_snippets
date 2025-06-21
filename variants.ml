@@ -37,7 +37,7 @@ type shape =
     | Point (x, y) -> (x, y)
 
 (* A couple of functions that could use the shape type *)
-let area = function 
+(* let area = function 
   | Point  _ -> 0.0
   | Circle (_, r) -> Float.pi *. (r ** 2.0)  
   | Rect ((x1, y1), (x2, y2)) ->  
@@ -48,4 +48,22 @@ let area = function
 let center = function 
     | Point p -> p 
     | Circle (p, _) -> p
-    | Rect ((x1, y1), (x2, y2)) -> ((x2 +. x1) /. 2.0, (y2 +. y1) /. 2.0 )
+    | Rect ((x1, y1), (x2, y2)) -> ((x2 +. x1) /. 2.0, (y2 +. y1) /. 2.0 )  *)
+
+
+(* Working with recursive parameterized variants *)
+type intlist = 
+  | Nil 
+  | Cons of int * intlist  
+
+
+type 'a mylist =  (*Think of alpha functions as functions that takes in a type and gibes you back a type *)
+  | Nil 
+  | Cons of 'a * 'a mylist 
+
+let rec length = function  
+  | Nil -> 0  
+  | Cons (_, t ) -> 1 + length t 
+
+  (* Example usage of the length function *)
+length (Cons (1, Nil));;  (* returns 1 *)
