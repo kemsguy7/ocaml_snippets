@@ -2,13 +2,11 @@
 
 (*
 
-
            4
           /  \
         2      5           
       /  \    / \    
       1  3    6  7
-
 *)
 
 type 'a tree =  (* Alpha type shows that this type can be a string , int or float *)
