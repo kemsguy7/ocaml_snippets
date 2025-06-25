@@ -47,3 +47,20 @@ let lst2 = odds [1; 2; 3; 4]
 let rec filter p = function 
   | [] -> []
   | h :: t -> if p h then h :: filter p t else filter p t   
+
+
+(* using fold to implement other functions *) 
+let length lst = 
+  List.fold_left (fun acc _ -> acc + 1) 0 lst 
+
+
+let rev lst = 
+  List.fold_left (fun acc x -> x :: acc ) [] lst 
+  
+let map f lst = 
+  List.fold_right (fun x acc -> f x :: acc ) lst []
+
+let filter f lst = 
+  List.fold_right (fun x acc -> if f x then x :: acc else acc) lst []
+
+
