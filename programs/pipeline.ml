@@ -9,8 +9,6 @@
     _______________
           6
 
-
-
 *)
 
 
@@ -48,3 +46,11 @@ let sum_sq n =
   |> sum                   (* 0+1+4+...+n*n.    *)  (* Adds them *)
 
 
+
+  (* rewriting the higher order implementtino inside sum_sq but less readable *)
+
+  let sum_sq n = 
+    let rec ( -- ) i j = if i > j then [] else i :: (i + 1 -- j) in 
+    let square x = x * x in 
+    let sum = List.fold_left ( + ) 0 in 
+    0 -- n |> List.map square |> sum 
