@@ -17,20 +17,34 @@
 (* using tail-recursive implementation *)
 let sum_eq n = 
   let rec loop i sum = 
-    if i > n then sum 
-    else loop (i + 1) (sum + i * 1)
-  in loop 0 0 
+    if i > n then sum  (*loop checks if i has passed n, return the accumulated sum *)
+    else loop (i + 1) (sum + i * 1)   (* first is getting the next number second is adding the square of the reent num to sum  *)
+  in loop 0 0  (*start the loop with i =0 and sum = 0 *)
 
 
 (* using high order functions *) 
 
-let rec ( -- ) i j = if i > j then [] else i :: i + 1 -- j 
+(* Helper functions *)
+let rec ( -- ) i j = if i > j then [] else i :: i + 1 -- j  (* This creates a custom operator that generats a list of numbers from i to j *)
+
+
+(*
+  is says  if start i > end j, return rmpty list
+
+  else
+
+  make a list starting with i, followed by numbers from i +j to j e.g  0 --2 creats [0; 1;  2];;
+*)
 let square x = x * x 
 let sum = List.fold_left ( + ) 0 
 
+
+
+
+(* Final implementation with higher order funcions *)
 let sum_sq n = 
-  0 -- n                   (*  [0;12;...;n]     *)
-  |> List.map square       (*  [0;1;4;....;n*n] *)
-  |> sum                   (* 0+1+4+...+n*n.    *) 
+  0 -- n                   (*  [0;1; 2;...;n]     *)
+  |> List.map square       (*  [0; 1; 4;....;n*n] *) (* squares each *)
+  |> sum                   (* 0+1+4+...+n*n.    *)  (* Adds them *)
 
 
