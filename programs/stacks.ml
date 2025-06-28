@@ -21,13 +21,16 @@ module type LIST_STACK = sig
 end
 
 
-module ListStack  = struct 
-  type 'a stack = 'a list 
-  
+module ListStack : LIST_STACK  = struct 
+ 
   let empty = []
+
+  let is_empty = function [] -> true | _ -> false 
 
   let push x s = 
     x :: s 
+
+ exception Empty 
 
   let peek = function 
     | [] -> failwith "Empty"
@@ -48,9 +51,9 @@ let y = ListStack.(empty |> push 42 |> peek )
 (* let open M in e make the names from  [M] be in scope in [e] *) (*M stands for module name *)
 
 (* The code above can also be rewritten using a local open *)
-let = w 
+(* let = w 
   let open ListStack in
-  empty |> push 42 |> peek  
+  empty |> push 42 |> peek   *)
 
  (* can also be rewritten using a global open *) 
  open ListStack 
