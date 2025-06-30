@@ -12,4 +12,11 @@ let () =
       while !m <= max do  
         prime.(!m) <- false; 
         m := !m + n 
-       
+      done 
+    end 
+  done    
+
+  let () = 
+    for h = 2 to max do 
+      if prime.(n) then Printf.printf "%d\n" n 
+    done 
