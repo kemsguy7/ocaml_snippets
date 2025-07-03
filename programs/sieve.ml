@@ -20,3 +20,6 @@ let () =  (*Display the prime numbers using this loop *)
   for n = 2 to max do 
     if prime.(n) then Printf.printf "%d\n" n 
   done 
+
+
+
