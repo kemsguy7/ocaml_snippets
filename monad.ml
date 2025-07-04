@@ -63,3 +63,16 @@ let () =
   Printf.printf "Result: %d\nLog: %s\n" result log 
   
 id' (5, "")  
+
+
+(* Writer monad signature proper *)
+module Writer : Monad = struct 
+  type 'a t = 'a * string 
+
+  let return x = (x, "")
+
+  let (>>=) m f = 
+    let (x, s1) = m in 
+    let (y, s2) = f x in 
+    (y, s1 ^ s2)
+end 
