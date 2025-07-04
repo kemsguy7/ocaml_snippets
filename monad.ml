@@ -32,5 +32,34 @@ module Maybe : Monad = struct
     | None -> None 
     | Some x -> f x 
 end 
-    
 
+(* Deriving and Implementing signature for the writer Monad*)
+
+let inc x = x + 1
+let dec x = x - 1   
+(*Loggin helper function*)
+ let log (name: string) (f: int -> int): int -> int * string = 
+   fun x -> (f x, Printf.sprintf "Called %s on %i; " name x)
+
+let loggable (name : string) (f: int -> int) : int * string -> int * string = 
+  fun (x , s1) -> 
+    let (y, s2) = log name f x in 
+    (y , s1 ^ s2) 
+
+
+let inc' : int * string -> int * string = 
+  loggable "inc" inc 
+
+let dec' : int * string -> int * string = 
+  loggable "dec" dec  
+
+let id' : int * string -> int * string = 
+  inc' >> dec'  
+
+ (* Example usage *)
+let () = 
+  let x = 5 in 
+  let (result, log) = id' (x, "") in 
+  Printf.printf "Result: %d\nLog: %s\n" result log 
+  
+id' (5, "")  
