@@ -54,7 +54,7 @@ let dec' : int * string -> int * string =
   loggable "dec" dec  
 
 let id' : int * string -> int * string = 
-  inc' >> dec'  
+  inc' >> dec'   (*id' composes inc' and dec' , meanng it will first apply inc' then dec' tp the result *)
 
  (* Example usage *)
 let () = 
@@ -83,6 +83,6 @@ Law 1: return x >>= f behaves the same as f x.
 
 Law 2: m >== return behaves the same as m. 
 
-Law 3: (m >>= f) >>=g behaves the same as m >>= (fun x -> f x >>=g).
+Law 3: (m >>= f) >>= g behaves the same as m >>= (fun x -> f x >>= g).
 
 *)
