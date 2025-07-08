@@ -81,6 +81,7 @@ end
 (*  
 Law 1: return x >>= f behaves the same as f x. 
 
+
 Law 2: m >== return behaves the same as m. 
 
 Law 3: (m >>= f) >>= g behaves the same as m >>= (fun x -> f x >>= g).
