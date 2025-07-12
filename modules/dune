@@ -1,6 +1,6 @@
-(executables (names berlin delhi algebra) (modules athens berlin cairo delhi ))
-(executable (name glasgow) (modules florence glasgow))
-(library (name exeter) (modules exeter))
+; (executables (names berlin delhi algebra) (modules athens berlin cairo delhi ))
+; (executable (name glasgow) (modules florence glasgow))
+; (library (name exeter) (modules exeter))
  
 
 
