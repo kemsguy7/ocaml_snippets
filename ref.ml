@@ -17,3 +17,8 @@ let next_val =
     incr counter; 
      !counter 
 
+
+
+type point = {x: int; y : int; mutable c: string}
+let  p = {x = 0; y = 0; c ="red"}
+p.c <- “white”

@@ -1,4 +1,4 @@
-let max = read_int () 
+let max = read_int ()  (*store the integer in this value*)
 
 let prime = Array.make (max + 1) true 
 
