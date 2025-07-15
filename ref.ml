@@ -25,3 +25,11 @@ p.c <- “white”
 
 
 (* Mutable singly linked lists *)
+
+(** JS*)
+2 !== 3
+
+2 <> 3
+2 != 3
+
+ let (!) = fun x -> x + 1; 

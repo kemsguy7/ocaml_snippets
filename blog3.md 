@@ -1,0 +1,216 @@
+# OUTREACHY BLOG 3: THINK ABOUT YOUR AUDIENCE
+
+This post is written for you, my readers, and any aspiring Outreachy intern who would love to contribute to the OCaml ecosystem.
+
+In this article, I assume the reader has some basic programming knowledge or tech knowledge in general. I'll try to break down concepts as much as possible, but if you still get lost at the end of the day, don't feel bad or think less of yourself. You can reach out for further explanation or ask questions in the comment section.
+
+## WHY OCAML?
+
+**"Object Categorical Abstract Machine Language"** - It is a multi-paradigm programming language that is used to write "beautiful programs". It has:
+
+- **Functional** features (emphasizing functions as first-class citizens)
+- **Imperative** features (allows state changes)
+- **Object-oriented** features (supports classes, objects and inheritance)
+
+However, most of the time, OCaml code is heavily written in the functional way (as mathematical expressions). It is one of the few languages that combines all these paradigms seamlessly.
+
+## ADVANTAGES OF USING OCAML
+
+### Compile Time
+It compiles very fast to bytecode and native code, faster than languages like C++/C and Java because of its native support for x86 systems.
+
+### Strongly Typed (Statically Typed)
+By being strongly typed, most bugs (code errors) are caught during development.
+
+### Garbage Collection
+OCaml features an efficient garbage collector (GC) that automatically manages memory, freeing developers from manual memory allocation/deallocation. This reduces memory leaks and segmentation faults while maintaining high performance. The generational GC optimizes short-lived objects, making OCaml ideal for long-running applications.
+
+## REAL-WORLD USAGE
+
+OCaml is one very powerful language that is being used for financial systems and for building compilers. A few companies that use OCaml include:
+
+- **Meta (Facebook)** - Uses OCaml extensively
+- **Bloomberg** - Utilizes OCaml in their advanced financial derivatives risk management applications, showcasing its suitability for high-stakes financial systems
+- **Jane Street** - Uses OCaml extensively for building their trading systems. They also have one of the best learning resources for learning OCaml: [Real World OCaml](https://dev.realworldocaml.org/)
+- **Tarides** - Major contributor to the OCaml ecosystem
+
+OCaml was used to build Rust's early compiler before it was rewritten in Rust itself. OCaml is very popular in the academic community because of its functional approach and strong mathematical applications where code is written as expressions. It is being taught to CS and software engineering students at Harvard and other top universities.
+
+## DEFINITION OF TERMS
+
+### Compiler
+You've seen me use the word "compiler" a lot of times, so what exactly is a compiler? A compiler is a software program that converts a "high-level" programming language into a low-level (machine-readable) language.
+
+Breaking it down further:
+- **High-level programming languages** are programming languages that are "human-readable" - they can be read and written by human programmers to write "programs" (set of instructions for a computer to execute)
+- **Machine-readable code** in simple terms are binaries (0s and 1s) - remember from basic elementary and secondary computer science classes?
+
+So what a compiler does is take sample code, for instance a simple for loop:
+
+```ocaml
+for variable = start_value to end_value do
+    expression 
+done
+```
+
+That instruction above will be converted by a compiler to machine-readable code (000001111, etc.), then the computer will interpret and execute the corresponding result.
+
+## WHEN SHOULD YOU CONSIDER USING OCAML?
+
+- Building compilers
+- Financial systems
+- Systems programming
+- Research
+- And even web development
+
+## LEARNING RESOURCES
+
+These are the learning resources I use and would recommend:
+
+1. **For quick introduction**: Use the official documentation at [ocaml.org](https://ocaml.org). It will give you a quick start on most of the basic knowledge you need to navigate around.
+
+2. **For in-depth understanding**: I recommend this book with embedded playlist by Dr. Michael Ryan: [CS 3110 Textbook](https://cs3110.github.io/textbook/cover.html)
+
+3. **For a deeper dive and real-world code**: [Real World OCaml](https://dev.realworldocaml.org/)
+
+4. **For practical introduction with algorithms and data structures**: [Programming with OCaml](https://usr.lmf.cnrs.fr/lpo/lpo.pdf)
+
+5. **Books ranked by skill level**: [OCaml Books](https://ocaml.org/books)
+
+6. **For Dune's source code**: You'll have to read the codes in the module implementations (.ml files) and interfaces (.mli files). Dune also has official documentation for users: [Dune Documentation](https://dune.readthedocs.io/en/stable/)
+
+## THE OCAML COMMUNITY
+
+### What kind of people participate in your communities in OCAML?
+
+OCaml has a very active community. There are many projects within the OCaml community, and these projects have various communication channels. Some of these channels are private and one would need an invite to join. However, to get started with contributing, I would recommend you check out the [GitHub repo](https://github.com/ocaml). Here you can see most of the projects and can start contributing right away.
+
+There's also a very active [forum](https://discuss.ocaml.org/) - feel free to drop by, say hello, post your bugs anytime (because you might face a lot of these as a first-timer), and people will always be available to help.
+
+### What problem is your community and project trying to solve?
+
+Dune is one of the projects and communities in OCaml. Dune is a build system for OCaml. In very simple terms, it automatically compiles your OCaml code, manages its dependencies, and generates the final executable or library. It's also a well-maintained, highly-optimized platform that streamlines your development process.
+
+More explanation on this can be found here: [Introducing Dune: The Essential Build System for OCaml Developers](https://tarides.com/blog/2024-09-26-introducing-dune-the-essential-build-system-for-ocaml-developers/)
+
+## THE PROBLEM I AM TRYING TO SOLVE
+
+I won't go much into details about the problem I'm trying to solve. In my previous article, I broke down my internship project and the intended outcome after the problem has been fixed. Please check out that article if you missed it.
+
+Currently, I've created an issue: [#11939](https://github.com/ocaml/dune/issues/11939) and I will continue posting updates as I work on my project, so please kindly follow up if you are interested.
+
+### Why would people want to use your project?
+
+The feature I'm currently working on has been the subject of discussion previously. Dune can build non-OCaml projects perfectly fine, however, it still requires the OCaml compiler to be installed in order to do so (even for projects that do not necessarily require the OCaml compiler to run). My task is to figure out the smallest information Dune needs when trying to build projects.
+
+There have been previous discussions around my project on these 2 issues:
+- [#11038](https://github.com/ocaml/dune/issues/11038)
+- [#4949](https://github.com/ocaml/dune/issues/4949)
+
+I'm excited to be contributing to this, and with input from my mentor and other members of the community, I will work to see this issue is fixed to make Dune work better.
+
+## WHAT NEW TERMS OR CONCEPTS HAVE I LEARNED IN THE PAST MONTH?
+
+> **WARNING: OCAML IS GOING TO CHANGE THE WAY YOU THINK ABOUT PROGRAMMING!!**
+
+In the past 6 weeks since my internship started, I've learned a whole lot. Every single day there are always new discoveries. First of all, my advice to aspiring interns will be: if you've not programmed in OCaml before, be ready to have a mentality shift from the way you see some programming concepts.
+
+Some programming languages need you to write only in declarative styles, some others are object-oriented, and for some others, you can write code both procedurally and in an object-oriented way. OCaml has all of these paradigms embedded in it. OCaml can be written in the OOP style, it has some imperative features. However, **OCaml is a functional programming (FP) first language**. Most of the time, you won't have to worry about other paradigms as you'll be following the FP style.
+
+OCaml has one of the best type inference features I've seen in any programming language so far. You don't have to specify the type most of the time - it can automatically infer the types of an expression and would always tell you the output of an expression. That way you can build programs in a very type-safe way. You can specify types explicitly in some cases where that needs to be done.
+
+### Concurrent Programming in Dune
+
+I've also invested a lot of time learning Dune's concurrent programming. Concurrency is the ability to perform different operations at the same time. Think of it as being able to multitask.
+
+OCaml does support concurrent (and parallel) programming by default. Because this is a relatively new feature, Dune does not use these features as they were added relatively recently and it needs to be possible to build dune with older versions of the compiler.
+
+Jane Street also worked on a concurrency library called Async, which is documented and good for starters. However, some amazing developers at Dune wrote concurrent modules inside Dune:
+
+- **Fiber**: [fiber.mli](https://github.com/ocaml/dune/blob/main/src/fiber/src/fiber.mli)
+- **Memo**: [memo.mli](https://github.com/ocaml/dune/blob/main/src/memo/memo.mli)
+
+**How this relates to my project**: My task is to figure out what minimal information Dune needs to build projects without requiring the OCaml compiler. This involves understanding how Dune's build system coordinates different tasks - and that's where these concurrency features come in.
+
+**What I've learned so far**: The **Fiber** module handles lightweight threads that can run concurrently without blocking each other. For example, when Dune is figuring out what files it can build, it can check multiple directories at the same time using fibers. The **Memo** module provides memoization - it remembers the results of expensive computations so they don't need to be repeated.
+
+In my project, I need to understand how Dune uses these tools to coordinate build tasks, because I'm trying to modify what information Dune requires upfront. If I change how Dune gathers project information, I need to make sure the concurrent parts still work correctly together.
+
+## CONFUSIONS WHILE LEARNING OCAML
+
+If you're coming from a highly functional programming language like Haskell, or Lisp, some syntax and ways things are done in OCaml would not be strange to you. But if you're coming from a JS or PHP background, you'll need to take some time to understand how OCaml works.
+
+Here's my thought process: **Haskell** is highly functional, so many concepts transfer over. **Lisp** was a major inspiration for OCaml, so some ideologies and syntax are similar. **C/C++** have similar formatted printing functions like `printf`. However, **JS and PHP** have quite different syntax - different loop constructs, operators, and general programming patterns that don't translate as well to OCaml's functional-first approach.
+
+I'll give a few instances where I got confused coming from these more imperative languages.
+
+### SCENARIO 1: The `!` Operator - Different Meanings
+
+In JS, the `!` operator is used for boolean negation:
+
+```javascript
+let result = !true; // false
+let check = !(x > 5); // negates the condition
+```
+
+In OCaml, the `!` operator means something completely different - it's a **de-referencing operator** used to access the current value stored in a ref cell.
+
+```ocaml
+let x = ref 0;;
+!x;; (* Gets the value: 0 *)
+```
+
+By the way, if you want boolean negation in OCaml, you use the `not` keyword:
+
+```ocaml
+let result = not true;; (* false *)
+let check = not (x > 5);; (* negates the condition *)
+```
+
+### Understanding Ref Cells
+
+Ref cells are just one way OCaml provides mutable storage. They're part of the standard library, constructed with the `ref` function:
+
+```ocaml
+let x = ref 0;;
+(* Output: val x : int ref = {contents = 0} *)
+```
+
+To access the value: `!x` (returns 0)
+To update the value: `x := 5` (sets x to contain 5)
+
+**NOTE:** Ref cells aren't the only way to mutate values in OCaml. You can also have mutable record fields and mutable arrays. Ref cells are just a convenient wrapper that makes mutation easy to work with.
+
+### SCENARIO 2: Functional Iteration vs. Imperative Loops
+
+Coming from imperative languages like JS or PHP, I was used to writing loops like this:
+
+```javascript
+// JS - iterating through an array
+for (let i = 0; i < array.length; i++) {
+    console.log(array[i]);
+}
+```
+
+OCaml does have `for` and `while` loops, but they're rarely used in practice. The functional approach is strongly preferred. Instead of modifying state in loops, you transform data using higher-order functions.
+
+For example, instead of mutating an array, you create new data structures:
+
+```ocaml
+(* Imperative style - rare in OCaml *)
+let numbers = [|1; 2; 3; 4|] in
+for i = 0 to Array.length numbers - 1 do
+  numbers.(i) <- numbers.(i) * 2
+done;;
+
+(* Functional style - preferred *)
+let numbers = [1; 2; 3; 4] in
+let doubled = List.map (fun x -> x * 2) numbers;;
+(* Result: [2; 4; 6; 8] *)
+```
+
+The functional approach uses higher-order functions like `map`, `filter`, and `fold` to transform data rather than looping through and mutating it. This was a huge mental shift for me - thinking about transforming data rather than modifying it step by step.
+
+---
+
+If you've read up to this point, **NAMASTE** 🙏. See you in my next post.
