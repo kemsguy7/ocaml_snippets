@@ -21,7 +21,7 @@ let next_val =
 
 type point = {x: int; y : int; mutable c: string}
 let  p = {x = 0; y = 0; c ="red"}
-p.c <- “white”
+(* p.c <- “white” *)
 
 
 (* Mutable singly linked lists *)
