@@ -1,3 +1,3 @@
 ( executable
- (name  fib)
+ (name  file_manipulation)
  (libraries base stdio ))
