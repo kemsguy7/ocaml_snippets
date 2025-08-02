@@ -76,6 +76,17 @@ let num = 3 in
 let denom = 4 in 
 ratio ~num ~denom;;
 
+(*optional arguments : is like a labelled argument that the caller can choose to provide or not provide *)
+
+let concat ?sep x y = 
+  let sep  = match sep with None -> "" | Some s -> s in  
+  x ^ sep ^ y;; 
+concat "Hello" "World";; (* Using the optional argument with a default value : foobar *)
+concat ~sep:" " "Hello" "World";; (* Using the optional argument with a specified value : foo:bar*)
+
+
+
+
 
 
 
