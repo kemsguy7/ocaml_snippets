@@ -105,5 +105,32 @@ let extensions filenames =
   extensions ["foo.c"; "foo.ml"; "ba.ml"; "bar.mli"];; 
 
 
-    
+  (* Tail Recursion *)
+  (*
   
+  The only way ton compute the length of an ocaml list is to walk the list from the beginning to the end, counting each element as we go.
+  
+  A linear opertion and it takes a time linear to the size of the list
+  
+  *)
+    
+  (* example 1*) 
+  let rec length = function 
+      | [] -> 0  
+      | _ :: tl -> 1 + length tl;;  
+  (* example call *)
+  length [1;2;3];; (*will give 3*) 
+  
+  (* function to make list *)
+  let make_list n = List.init ~f:(fun x -> x);;
+length (make_list 1000000);;
+(*for large lists, the example above will run it a stack overflow error*)
+
+
+  (* example 2 *) 
+let rec length_plus_n l n = 
+  match l with 
+  | [] -> n 
+  | _ :: tl -> length_plus_n tl (n + 1);;
+
+let length l = length_plus_n l 0;; 

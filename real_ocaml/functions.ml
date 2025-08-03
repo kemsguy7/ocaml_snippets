@@ -85,7 +85,8 @@ concat "Hello" "World";; (* Using the optional argument with a default value : f
 concat ~sep:" " "Hello" "World";; (* Using the optional argument with a specified value : foo:bar*)
 
 
-
+(* more concise pattern *)
+let concat ?(sep="") x y = x ^ sep ^ y;; 
 
 
 
